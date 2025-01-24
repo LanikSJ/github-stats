@@ -2,7 +2,7 @@ name: Generate Stats Images
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
   schedule:
     - cron: "5 0 * * *"
   workflow_dispatch:
@@ -40,8 +40,8 @@ jobs:
       env:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        EXCLUDED: ${{ secrets.EXCLUDED }}
-        EXCLUDED_LANGS: ${{ secrets.EXCLUDED_LANGS }}
+        #EXCLUDED: ${{ secrets.EXCLUDED }}
+        #EXCLUDED_LANGS: ${{ secrets.EXCLUDED_LANGS }}
         EXCLUDE_FORKED_REPOS: true
 
     # Commit all changed files to the repository
